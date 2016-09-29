@@ -1,0 +1,31 @@
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Order Date</th>
+            <th>Order Details</th>
+            <th>Delivery</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if order_list %}
+        {% for order in order_list %}
+        <tr>
+            <td><input type="checkbox" aria-label="..."></td>
+            <td>{{ order.orderDate }}</td>
+            <td>{{ order.orderId }}</td>
+            <td>{{ order.shipDate}}</td>
+            <td>{{ order.status}}</td>
+            <td><button class="btn btn-default" type="button">Schedule</button></td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <p>No orders are available.</p>
+        {% endif %}
+
+        </tbody>
+    </table>
+</div>
